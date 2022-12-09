@@ -1,0 +1,8 @@
+#!/bin/zsh
+
+DAY=$1
+
+cargo new day_$DAY
+cd day_$DAY
+aoc download --day $DAY
+cp ../.main.template.rs src/main.rs

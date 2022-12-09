@@ -1,9 +1,8 @@
-use std::fs::read_to_string;
+const INPUT: &str = include_str!("../input");
 
 fn main() {
-    let input = read_to_string("input.txt").unwrap();
-    println!("{}", part_1(&input));
-    println!("{}", part_2(&input));
+    println!("{}", part_1(INPUT));
+    println!("{}", part_2(INPUT));
 }
 
 fn part_1(input: &str) -> usize {

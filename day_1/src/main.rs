@@ -1,16 +1,13 @@
-use anyhow::Result;
 use itertools::*;
-use std::fs;
+
+const INPUT: &str = include_str!("../input");
 
 fn main() {
-    let file = fs::read_to_string("input.txt").unwrap();
-    let output = p1(&file);
-    let output2 = p2(&file);
-    println!("{}", output);
-    println!("{}", output2)
+    println!("{}", part_1(INPUT));
+    println!("{}", part_2(INPUT));
 }
 
-fn p1(input: &String) -> usize {
+fn part_1(input: &str) -> usize {
     input
         .split("\n\n")
         .map(|elf| elf.split('\n').flat_map(|x| x.parse::<usize>()).sum())
@@ -18,7 +15,7 @@ fn p1(input: &String) -> usize {
         .unwrap()
 }
 
-fn p2(input: &String) -> usize {
+fn part_2(input: &str) -> usize {
     input
         .split("\n\n")
         .map(|elf| elf.split('\n').flat_map(|x| x.parse::<usize>()).sum())
